@@ -28,7 +28,7 @@ scrape_configs:
       - targets: ['10.152.183.91:9200']
     metrics_path: '/_prometheus/metrics'
 
-    - job_name: 'node-exporter'
+  - job_name: 'node-exporter'
     static_configs:
       - targets:
           - '10.0.14.201:9100'
