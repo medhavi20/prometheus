@@ -28,7 +28,7 @@ scrape_configs:
       - targets: ['10.152.183.91:9200']
     metrics_path: '/_prometheus/metrics'
 
-  - job_name: 'node-exporter'
+    - job_name: 'node-exporter'
     static_configs:
       - targets:
           - '10.0.14.201:9100'
@@ -37,11 +37,11 @@ scrape_configs:
       - source_labels: ['nodename']
         regex: '(qa.master)'
         target_label: nodename
-        replacement: appz-${1}
+        replacement: 'appz-${1}'
       - source_labels: ['nodename']
         regex: 'qa.worker.node.(.*)'
         target_label: nodename
-        replacement: appz-${1}
+        replacement: 'appz-${1}'
 
   - job_name: 'kube-state-metrics'
     static_configs:
